@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+RewriteCond %{HTTP_REFERER} !^http://elektronika-industri.my.id/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://elektronika-industri.my.id$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.elektronika-industri.my.id/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.elektronika-industri.my.id$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://elektronika-industri.my.id/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://elektronika-industri.my.id$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.elektronika-industri.my.id/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.elektronika-industri.my.id$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
